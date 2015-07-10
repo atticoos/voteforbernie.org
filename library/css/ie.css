@@ -453,8 +453,12 @@ mobile. Make sure to double check these!
   display: inline-block;
 }
 
+.did-you-know {
+  font-size: 13px;
+}
+
 #vmap {
-  height: 500px;
+  height: 400px;
 }
 
 /******************************************************************
@@ -476,7 +480,7 @@ be seen on the Desktop.
 }
 
 #vmap {
-  height: 630px;
+  height: 500px;
 }
 
 /*

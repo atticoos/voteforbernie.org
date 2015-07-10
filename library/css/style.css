@@ -2038,12 +2038,72 @@ FOOTER STYLES
 	view.
 	*/
 /* end .footer-links */
+.bernie-book {
+  font-size: 11px;
+  vertical-align: top;
+  margin-top: 74px;
+}
+
+@media (min-width: 768px) and (max-width: 1029px) {
+  .bernie-book {
+    margin-top: 23px;
+  }
+}
+
+@media (max-width: 769px) {
+  .bernie-book {
+    font-size: 14px;
+    margin-top: 0;
+  }
+}
+
+.bernie-book p {
+  margin: 0;
+}
+
+.bernie-book .book-img {
+  float: left;
+  margin-right: 5px;
+  border: 3px solid rgba(50, 57, 68, 0.2);
+}
+
+@media (min-width: 768px) and (max-width: 1029px) {
+  .bernie-book .book-img {
+    width: 80px;
+  }
+}
+
+.bernie-book .disclaimer {
+  color: #999;
+  margin-top: 55px;
+}
+
+@media (min-width: 768px) and (max-width: 1029px) {
+  .bernie-book .disclaimer {
+    margin-top: 8px;
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 769px) {
+  .bernie-book .disclaimer {
+    margin-top: 54px;
+    font-size: 11px;
+  }
+}
+
 .notice {
   color: #D42C2C;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 0 10px;
-  font-size: 13px;
   border-left: 3px solid rgba(50, 57, 68, 0.2);
+  font-size: 13px;
+}
+
+@media (min-width: 768px) and (max-width: 1029px) {
+  .notice {
+    font-size: 11px;
+  }
 }
 
 .notice em {
@@ -2848,8 +2908,11 @@ mobile. Make sure to double check these!
   .vote-info .state .advice strong, .vote-info .state .advice a {
     display: inline-block;
   }
+  .did-you-know {
+    font-size: 13px;
+  }
   #vmap {
-    height: 500px;
+    height: 400px;
   }
 }
 
@@ -2877,7 +2940,7 @@ be seen on the Desktop.
     font-size: 2.8em;
   }
   #vmap {
-    height: 630px;
+    height: 500px;
   }
 }
 
