@@ -30,6 +30,17 @@ function bones_ahoy() {
   // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
   require_once( 'library/custom-post-type.php' );
 
+
+  // Add 'States' Post Type
+  add_action('init', 'vpf_custom_post_types');
+  function vpf_custom_post_types() {
+    $args = array(
+      'labels' => array('name' => 'States', 'singular_name' => 'State'),
+      'public' => true
+    );
+    register_post_type('state', $args);
+  }
+
   // launching operation cleanup
   add_action( 'init', 'bones_head_cleanup' );
   // A better title

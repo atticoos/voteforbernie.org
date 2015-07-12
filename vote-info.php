@@ -7,7 +7,6 @@
 ?>
 
 <?php get_header(); ?>
-<p><?php _e(get_field( 'description', false, false )); ?></p>
 			<div id="content" class="vote-info">
 				<div class="wrap">
 					<!-- <h2 class="m-all t-1of4 d-1of4">Did you know?</h2> -->
@@ -53,7 +52,114 @@
 
 								<section class="entry-content cf" itemprop="articleBody">
 									<div class="page-content m-all t-all d-all">
-										<?php	the_content(); ?>
+  									<div class="states">
+  									<?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
+
+                  <?php
+                  $stateQuery = new WP_Query(array('post_type' => 'state', 'posts_per_page' => -1, 'order' => 'asc'));
+                  while ($stateQuery->have_posts()) : $stateQuery->the_post();
+                    $stateCode = get_field('state');
+                    $stateName = get_field_object('state')['choices'][ $stateCode ];
+                    $denonym = get_field('denonym');
+                    $type = get_field('type');
+                    $status = get_field('status');
+                    $specialExplanation = get_field('special_explanation');
+                    $extraExplanation = get_field('extra_explanation');
+                    $additionalNote = get_field('additional_note');
+                    $voteLink = get_field('vote_link');
+                    $primaryDate = get_field('primary_date') ?: 'TBD';
+                    $deadlineRef = get_field('deadline_reference');
+                    $deadlineDate = get_field('deadline_date');
+                    $checkRegistrationLink = get_field('check_registration_link');
+                    $under18 = get_field('under_18');
+                    $registrationNotRequired = get_field('registration_not_required');
+
+                    $discussionLink = get_field('discussion_link');
+
+                    // TODO: Iowa, Ohio, and Illinois do not require/have registration, you declare at the ballot, change button text accordingly
+
+
+                    // Determine classes and text per status
+                    switch ($status) {
+                      case 'open':
+                        $statusClass = 'open';
+                        $explainText = 'You can vote for a Bernie Sanders regardless of registered party.';
+                        $actionText = 'Just register to vote!';
+                      break;
+                      case 'closed':
+                        $statusClass = 'closed';
+                        $explainText = 'If you are <strong>not</strong> registered as a democrat, you <strong>cannot</strong> vote for a Bernie Sanders.';
+                        $actionText = 'Register as a democrat';
+                      break;
+                      case 'semi-closed':
+                        $statusClass = 'other';
+                        $explainText = 'If you are <strong>not</strong> registered as a democrat or undeclared, you <strong>cannot</strong> vote for Bernie Sanders.';
+                        $actionText = 'Register as a democrat or undeclared';
+                      break;
+                      case 'semi-open':
+                        $statusClass = 'other';
+                        $explainText = 'If you are registered as a republican, you <strong>cannot</strong> vote for Bernie Sanders.';
+                        $actionText = 'Register as a democrat or undeclared';
+                      break;
+                      default:
+                        $statusClass = 'other';
+                      break;
+                    }
+
+                    if ($registrationNotRequired) {
+                    	$explainText = $denonym . ' are able to change party at primary election ballots.';
+                    	$actionText = 'Declare democratic affiliation at ballot';
+                    }
+
+                    if ($type === 'caucuses') {
+                      $statusClass = 'caucus';
+                    }
+
+                    if ($specialExplanation) {
+                      $explainText = $specialExplanation;
+                    }
+
+                    if ($extraExplanation) {
+                      $explainText = $explainText . ' ' . $extraExplanation;
+                    }
+
+                    $typeText = ($type === 'caucuses') ? 'Caucus' : 'Primary';
+                    $deadlineText = $deadlineDate ? '<time title="' . $deadlineRef . '">' . $deadlineDate . '</time>' : $deadlineRef;
+
+
+                  ?>
+                  <div id="<?php echo $stateCode; ?>" class="state <?php echo $stateCode; ?> <?php echo $statusClass; ?>">
+                    <h3><?php echo $stateName; ?></h3>
+                    <div class="state-info cf">
+                      <div class="m-all t-2of3 d-2of3">
+                        <p class="primaries"><?php echo $stateName; ?> has <strong class="status"><?php echo $status; ?></strong> <?php echo $type; ?>.</p>
+                        <p class="explain"><?php echo $explainText; ?></p>
+                        <p class="advice"><?php echo $denonym; ?> for Bernie: <a href="<?php echo $voteLink ?>" data-track="Vote Link, <?php echo $stateCode; ?>"><?php echo $actionText; ?></a></p>
+                        <?php if ($under18) { ?>
+                          <p class="explain"><strong>Only 17?</strong> If you will be 18 by November 8, 2016, you can vote in the primaries!</p>
+                        <?php } ?>
+                        <?php if ($additionalNote) { ?>
+                          <p class="explain"><?php echo $additionalNote; ?></p>
+                        <?php } ?>
+                      </div>
+                      <div class="resources m-all t-1of3 d-1of3">
+                        <p><?php echo $typeText; ?>: <strong><?php echo $primaryDate; ?></strong></p>
+                        <p>Deadline: <?php echo $deadlineText; ?></p>
+                        <ul>
+                          <li>Discussion: <?php echo $discussionLink; ?></li>
+                          <!-- <li><a href="<?php echo $checkRegistrationLink; ?>" data-track="Check Registration, <?php echo $stateCode; ?>">Check your current registration</a></li> -->
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <?php
+                    endwhile;
+                    wp_reset_query();
+                  ?>
+                  <?php if(function_exists('add_social_button_in_content')) echo add_social_button_in_content(); ?>
+                  </div>
+
+										<?php // the_content(); ?>
 									</div>
 								</section>
 
