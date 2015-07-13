@@ -59,7 +59,8 @@
                   $stateQuery = new WP_Query(array('post_type' => 'state', 'posts_per_page' => -1, 'order' => 'asc'));
                   while ($stateQuery->have_posts()) : $stateQuery->the_post();
                     $stateCode = get_field('state');
-                    $stateName = get_field_object('state')['choices'][ $stateCode ];
+                    $state = get_field_object('state');
+                    $stateName = $state['choices'][ $stateCode ];
                     $denonym = get_field('denonym');
                     $type = get_field('type');
                     $status = get_field('status');
@@ -67,7 +68,10 @@
                     $extraExplanation = get_field('extra_explanation');
                     $additionalNote = get_field('additional_note');
                     $voteLink = get_field('vote_link');
-                    $primaryDate = get_field('primary_date') ?: 'TBD';
+                    $primaryDate = get_field('primary_date');
+                    if (!$primaryDate) {
+                    	$primaryDate = 'TBD';
+                    }
                     $deadlineRef = get_field('deadline_reference');
                     $deadlineDate = get_field('deadline_date');
                     $checkRegistrationLink = get_field('check_registration_link');
@@ -134,7 +138,7 @@
                       <div class="m-all t-2of3 d-2of3">
                         <p class="primaries"><?php echo $stateName; ?> has <strong class="status"><?php echo $status; ?></strong> <?php echo $type; ?>.</p>
                         <p class="explain"><?php echo $explainText; ?></p>
-                        <p class="advice"><?php echo $denonym; ?> for Bernie: <a href="<?php echo $voteLink ?>" data-track="Vote Link, <?php echo $stateCode; ?>"><?php echo $actionText; ?></a></p>
+                        <p class="advice"><?php echo $denonym; ?> for Bernie: <a href="<?php echo $voteLink ?>" data-track="Vote Link, <?php echo $stateCode; ?>" target="_blank"><?php echo $actionText; ?></a></p>
                         <?php if ($under18) { ?>
                           <p class="explain"><strong>Only 17?</strong> If you will be 18 by November 8, 2016, you can vote in the primaries!</p>
                         <?php } ?>
