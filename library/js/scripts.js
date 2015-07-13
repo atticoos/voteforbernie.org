@@ -122,6 +122,33 @@ vfb.chooseState = function (stateCode) {
   jQuery('html, body').animate({ scrollTop: $state.offset().top - 100 }, 'slow');
 };
 
+vfb.trackEvent = function () {
+  var args, params, i;
+
+  try {
+    args = arguments;
+
+    if(args.length < 2 || args.length > 4) {
+      console.debug('Usage: trackEvent(category, action) [' + Array.prototype.slice.call(arguments).toString() + ']');
+      return false;
+    }
+
+    ga('send', 'event', args[0], args[1]);
+    console.log(args[0], args[1]);
+    return false;
+
+  } catch(e) {
+    console.error('Unable to complete google analytics[trackEvent]: ' + e);
+  }
+};
+
+vfb.trackElements = function () {
+  jQuery('[data-track]').on('click', function () {
+    var $trackingData = jQuery(this).data('track').split(',');
+
+    vfb.trackEvent.apply(null, $trackingData);
+  });
+};
 
 /*
  * Put all your regular jQuery in here.
@@ -133,6 +160,9 @@ jQuery(document).ready(function($) {
    * You can remove this if you don't need it
   */
   loadGravatars();
+
+  // Enable tracking clicks
+  vfb.trackElements();
 
 
   // Build map if available
@@ -163,6 +193,7 @@ jQuery(document).ready(function($) {
         //   jQuery(label).text(jQuery(label).text() + ' - ' + $states.find('.' + code).find('span').eq(0).text() + ' primaries');
         // },
         onRegionClick: function (element, code, region) {
+          vfb.trackEvent('State click', code);
           vfb.chooseState(code);
         }
     });
