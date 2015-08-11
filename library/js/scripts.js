@@ -150,22 +150,9 @@ vfb.trackElements = function () {
   });
 };
 
-/*
- * Put all your regular jQuery in here.
-*/
-jQuery(document).ready(function($) {
 
-  /*
-   * Let's fire off the gravatar function
-   * You can remove this if you don't need it
-  */
-  loadGravatars();
-
-  // Enable tracking clicks
-  vfb.trackElements();
-
-
-  // Build map if available
+vfb.buildMap = function () {
+ // Build map if available
 
   var $vmap = jQuery('#vmap');
 
@@ -225,22 +212,80 @@ jQuery(document).ready(function($) {
     });
 
   };
+}
 
-  var $clock = jQuery('.flip-counter');
+vfb.startCountdown = function () {
+var $clock = jQuery('.flip-counter');
 
-  if ($clock.length) {
-    // TODO: If timer is over, change layout.
+  vfb.startClock = function () {
+    if ($clock.length) {
+      // TODO: If timer is over, change layout.
 
-    var now = new Date();
-    var end = new Date(Date.UTC(2015, 7, 5, 19, 0, 0));
-    var delta = end.getTime() / 1000 - now.getTime() / 1000;
+      var now = new Date();
+      var end = new Date(Date.UTC(2015, 7, 5, 19, 0, 0));
+      var delta = end.getTime() / 1000 - now.getTime() / 1000;
 
-    $clock.FlipClock(delta, {
-      countdown: true,
-      clockFace: 'DailyCounter'
-    });
+      $clock.FlipClock(delta, {
+        countdown: true,
+        clockFace: 'DailyCounter'
+      });
+    }
+  };
+
+  vfb.startClock();
+
+  setInterval(function () {
+    // Keep clock in sync, browser timers suck.
+    vfb.startClock();
+  }, 120000);
+}
+
+vfb.enhanceSharing = function () {
+  var $floatShareWrapper = jQuery('#crestashareicon'),
+  $contentShareWrappers = jQuery('.cresta-share-icon').not($floatShareWrapper);
+
+  addCounter = function ($parent, count) {
+    $parent.append('<span class="cresta-the-count">' + count + '</span>');
+  };
+
+  findCounter = function (site) {
+    if (!$floatShareWrapper.find('#' + site + '-count').text()) {
+      return setTimeout(function () { waitForContent(site) }, 100);
+    } else {
+      addCounter($contentShareWrappers.find('.' + site + '-cresta-share'), $floatShareWrapper.find('#' + site + '-count').text());
+    }
+  };
+
+  if ($floatShareWrapper.length && $contentShareWrappers.length) {
+
+    findCounter('facebook');
+    findCounter('twitter');
+    findCounter('googleplus');
   }
+}
 
+/*
+ * Put all your regular jQuery in here.
+*/
+jQuery(document).ready(function($) {
+
+  /*
+   * Let's fire off the gravatar function
+   * You can remove this if you don't need it
+  */
+  loadGravatars();
+
+  // Enable tracking clicks
+  vfb.trackElements();
+
+
+  vfb.buildMap();
+
+  vfb.startCountdown();
+
+  setTimeout(function () {
+    vfb.enhanceSharing();
+  }, 1000);
 
 
 }); /* end of as page load scripts */
