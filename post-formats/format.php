@@ -34,9 +34,13 @@
                 </header> <?php // end article header ?>
 
                 <section class="entry-content cf" itemprop="articleBody">
+
                   <?php
                     // the content (pretty self explanatory huh)
                     the_content();
+
+                    if(function_exists('add_social_button_in_content')) echo add_social_button_in_content();
+                    echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" );
 
                     /*
                      * Link Pages is used in case you have posts that are set to break into
@@ -67,6 +71,6 @@
 
                 </footer> <?php // end article footer ?>
 
-                <?php //comments_template(); ?>
+                <?php comments_template(); ?>
 
               </article> <?php // end article ?>
