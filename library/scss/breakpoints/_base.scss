@@ -166,6 +166,27 @@ HEADER STYLES
 	}
 }
 
+.feature {
+	background-color: #252B35;
+	padding: 10px;
+	text-align: center;
+	p {
+		margin: 0;
+	}
+	a {
+		text-decoration: none;
+		color: #fff;
+	}
+	strong {
+		color: #D42C2C;
+		text-decoration: underline;
+	}
+	em {
+		font-style: normal;
+		color: #4576BB;
+	}
+}
+
 	#logo {
 		margin: 0.25em 0;
 		a {
@@ -1177,6 +1198,7 @@ FOOTER STYLES
 	font-family: $sans-serif;
 	max-width: 500px;
 	text-align: left;
+	margin: 10px 10px 10px 0;
 
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -1227,38 +1249,127 @@ FOOTER STYLES
 			text-transform: uppercase;
 		}
 	}
-	h2 {
-
-	}
-}
-
-.thunder-container {
-	@media (max-width: 767px) {
-		text-align: center;
-	}
-	position: relative;
-	&:after {
-		content: '';
-		position: absolute;
-		right: -37px;
-		top: 322px;
-		height: 89px;
-		width: 53px;
-		pointer-events: none;
-
-		background: url(../images/arrow1.png) right bottom no-repeat;
-		@media (max-width: 767px) {
-			content: initial;
+	.section {
+		h2 {
+			// font-family: $accentFont;
+			font-size: 40px;
+			margin: 0;
+			position: relative;
+			display: inline-block;
+			z-index: 2;
+			span {
+				position: relative;
+				z-index: 2;
+			}
+		}
+		p {
+			margin: 10px 0;
+		}
+		.sample {
+			background-color: #fff;
+			color: #7E8A9B;
+			font-size: 13px;
+			font-style: italic;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			position: relative;
+			&:after {
+				content: 'example';
+				right: 0;
+				top: 0;
+				position: absolute;
+				background-color: #ccc;
+				border-bottom-left-radius: 4px;
+				border-top-right-radius: 4px;
+				color: #fff;
+				font-style: normal;
+				padding: 5px 10px;
+			}
 		}
 	}
+
+	.spread-word {
+		#crestashareiconincontent {
+			margin: 0;
+			vertical-align: top;
+			display: inline-block;
+		}
+	}
+
+	.stay-involved {
+		clear: both;
+		h2 {
+			text-align: center;
+		}
+	}
+
+	// .share-page {
+	// 	text-align: center;
+	// 	margin-bottom: 30px;
+	// }
+
 }
 
+// .thunder-container {
+// 	@media (max-width: 767px) {
+// 		text-align: center;
+// 	}
+// 	position: relative;
+// 	&:after {
+// 		content: '';
+// 		position: absolute;
+// 		right: -37px;
+// 		top: 322px;
+// 		height: 89px;
+// 		width: 53px;
+// 		pointer-events: none;
+
+// 		background: url(../images/arrow1.png) right bottom no-repeat;
+// 		@media (max-width: 767px) {
+// 			content: initial;
+// 		}
+// 	}
+// }
+
 // Flip Clock
+// .coming-soon {
+// 	position: relative;
+// 	.section {
+// 		opacity: 0.35;
+// 		pointer-events: none;
+//	}
+// 	&:after {
+// 		content: '';
+// 		background: url(../images/fade-to-paper.png) 0 100% repeat-x;
+// 		top: 0;
+// 		left: 0;
+// 		right: 0;
+// 		bottom: 0;
+// 		position: absolute;
+// 	}
+// }
+.clock-wrapper {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 60px;
+	z-index: 2;
+	p {
+		text-align: center;
+		color: #D42C2C;
+		margin: 0;
+	}
+	h4 {
+		text-align: center;
+		margin: 0;
+		font-size: 25px;
+	}
+}
 .flip-clock-wrapper {
 	margin: 0 auto;
 }
 .timer-container {
-	padding-top: 30px;
 	text-align: center;
 	@media (max-width: 767px) {
 		padding-top: 0;
@@ -1392,6 +1503,28 @@ FOOTER STYLES
 	}
 }
 
+.first-steps {
+	text-align: left;
+	padding: 0;
+	list-style-type: decimal;
+	max-width: 600px;
+	margin: 0 auto;
+  list-style-position: inside;
+}
+
+.coming-event {
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.6);
+	max-width: 650px;
+	margin: 10px auto;
+	border-radius: 4px;
+	h2 {
+		font-size: 50px;
+		margin: 0;
+	}
+}
+
+
 // Cresta Share Styles
 
 .cresta-share-icon {
@@ -1444,6 +1577,11 @@ FOOTER STYLES
 		display: inline-block;
 		width: 40%;
 		margin: 0;
+		&:last-child {
+			.yks_mc_interest_group_text, .yks_mc_interest_group_holder {
+				display: none;
+			}
+		}
 	}
 	.yks-mc-form-row-zip-code {
 		width: 26%;

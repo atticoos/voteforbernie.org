@@ -972,17 +972,17 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.blue-btn, .comment-reply-link, #submit {
+.ui-btn {
   display: inline-block;
   position: relative;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Yanone Kaffeesatz", "Georgia", Cambria, Times New Roman, Times, serif;
   text-decoration: none;
   color: #fff;
   font-size: 0.9em;
-  font-size: 34px;
+  font-size: 26px;
   line-height: 34px;
   font-weight: normal;
-  padding: 0 24px;
+  padding: 5px 15px;
   border-radius: 4px;
   border: 0;
   cursor: pointer;
@@ -990,13 +990,13 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   transition: background-color 0.14s ease-in-out;
 }
 
-.blue-btn:hover, .comment-reply-link:hover, #submit:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus {
+.ui-btn:hover, .ui-btn:focus {
   color: #fff;
   text-decoration: none;
   outline: none;
 }
 
-.blue-btn:active, .comment-reply-link:active, #submit:active {
+.ui-btn:active {
   top: 1px;
 }
 
@@ -1005,19 +1005,28 @@ An example button.
 You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
 */
-.blue-btn, .comment-reply-link, #submit {
-  background-color: #2980b9;
+.ui-btn {
+  background-color: #4099FF;
 }
 
-.blue-btn:hover,
-.comment-reply-link:hover,
-#submit:hover,
-.blue-btn:focus, .comment-reply-link:focus, #submit:focus {
-  background-color: #2574a8;
+.ui-btn:hover,
+.ui-btn:focus {
+  background-color: #2c8eff;
 }
 
-.blue-btn:active, .comment-reply-link:active, #submit:active {
-  background-color: #2472a4;
+.ui-btn:active {
+  background-color: #268bff;
+}
+
+.fb-btn {
+  padding-left: 50px;
+  background-image: url(data:image/png;charset=utf-8;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAcCAYAAACZOmSXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkI1MjRCQTJBMkRCODExRTVBNkM3RERCNDMxQjk1MUQ5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkI1MjRCQTJCMkRCODExRTVBNkM3RERCNDMxQjk1MUQ5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QjUyNEJBMjgyREI4MTFFNUE2QzdEREI0MzFCOTUxRDkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QjUyNEJBMjkyREI4MTFFNUE2QzdEREI0MzFCOTUxRDkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6zF90lAAACDElEQVR42uyWsUtbQRzHr5pWTHFI6ZBR3qwl8MTsJf0PGic7uDi7KWq3InZ1K4gOUkpNFyFbs4ioVFLo4CaKEU0sLcmkolWv39PvxV9f3nt5HUyG9gsf7ne/+9397i4vv/eU1lqF4IJ9sAdSTWIt/WAHlEA6LLbZQh/1nT5ETD4v5qyExcaUUs/AS/BI3eoELIF98FjdqYdtH8iCLjF2DnJgG3QL/xO2veCVWO8CfDI7qOhGbXB3eeHL01fW/jrk+HvhW6Nv0ye+0oEdJFWjDlSwSgH+sDl+Y8mY6HwB0+AMbIUs9BwMgofC96vJnGEwx5/kDUgbp0z+ExQ8k34I+4it2dxqSKLvwt4Tm1unPWYHYypcU4y5Aq9VNM2ABB/gybDAZsnLfEr/RuYGR6IEdqg2Sp48DpwW5Ixb44G+qXPtP/kpOG5BzmT99D4V7L6pV822PnD/k3uVMY8DmPX0rTR9ppIts69pK0+cpRi1wmVFOxHw/3c47oIXoEbbqyHW+FrUk2f5ceAELGg1Ct6KF9JXMZZgu8xTZ6Ikt9eZ89xCkGqcUySu8A+YQsbbexcleVbs2PYL4qSjtAvE9gc867jclMsbbLh2vyJTBbO0MxxzwLiIHee48X8WfmMnxJfvLv1VrvVHkfl3K5x8q5mPgG8tyJkCT23yS7SdbTj4tbn2BX6jtVIm3+JvAQYAq0fGuQfv4e0AAAAASUVORK5CYII=);
+  background-position: 10px 50%;
+  background-repeat: no-repeat;
+}
+
+.fb-btn:hover, .fb-btn:active, .fb-btn:visited {
+  color: #fff !important;
 }
 
 /******************************************************************
@@ -1489,6 +1498,31 @@ HEADER STYLES
   position: absolute;
 }
 
+.feature {
+  background-color: #252B35;
+  padding: 10px;
+  text-align: center;
+}
+
+.feature p {
+  margin: 0;
+}
+
+.feature a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.feature strong {
+  color: #D42C2C;
+  text-decoration: underline;
+}
+
+.feature em {
+  font-style: normal;
+  color: #4576BB;
+}
+
 #logo {
   margin: 0.25em 0;
 }
@@ -1652,7 +1686,7 @@ POSTS & CONTENT STYLES
 .entry-content blockquote {
   margin: 0 0 1.5em 0.75em;
   padding: 0 0 0 0.75em;
-  border-left: 3px solid #2980b9;
+  border-left: 3px solid #4099FF;
   font-style: italic;
   color: #9fa6b4;
 }
@@ -1756,11 +1790,11 @@ PAGE NAVI STYLES
   padding: 0.75em;
   min-width: 1em;
   display: block;
-  color: #2980b9;
+  color: #4099FF;
 }
 
 .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
-  background-color: #2980b9;
+  background-color: #4099FF;
   color: #fff;
 }
 
@@ -2299,6 +2333,7 @@ FOOTER STYLES
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   max-width: 500px;
   text-align: left;
+  margin: 10px 10px 10px 0;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -2355,31 +2390,79 @@ FOOTER STYLES
   }
 }
 
-.thunder-container {
+.debate-page .section h2 {
+  font-size: 40px;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+}
+
+.debate-page .section h2 span {
+  position: relative;
+  z-index: 2;
+}
+
+.debate-page .section p {
+  margin: 10px 0;
+}
+
+.debate-page .section .sample {
+  background-color: #fff;
+  color: #7E8A9B;
+  font-size: 13px;
+  font-style: italic;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   position: relative;
 }
 
-@media (max-width: 767px) {
-  .thunder-container {
-    text-align: center;
-  }
-}
-
-.thunder-container:after {
-  content: '';
+.debate-page .section .sample:after {
+  content: 'example';
+  right: 0;
+  top: 0;
   position: absolute;
-  right: -37px;
-  top: 322px;
-  height: 89px;
-  width: 53px;
-  pointer-events: none;
-  background: url(../images/arrow1.png) right bottom no-repeat;
+  background-color: #ccc;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 4px;
+  color: #fff;
+  font-style: normal;
+  padding: 5px 10px;
 }
 
-@media (max-width: 767px) {
-  .thunder-container:after {
-    content: initial;
-  }
+.debate-page .spread-word #crestashareiconincontent {
+  margin: 0;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.debate-page .stay-involved {
+  clear: both;
+}
+
+.debate-page .stay-involved h2 {
+  text-align: center;
+}
+
+.clock-wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 60px;
+  z-index: 2;
+}
+
+.clock-wrapper p {
+  text-align: center;
+  color: #D42C2C;
+  margin: 0;
+}
+
+.clock-wrapper h4 {
+  text-align: center;
+  margin: 0;
+  font-size: 25px;
 }
 
 .flip-clock-wrapper {
@@ -2387,7 +2470,6 @@ FOOTER STYLES
 }
 
 .timer-container {
-  padding-top: 30px;
   text-align: center;
 }
 
@@ -2513,6 +2595,28 @@ FOOTER STYLES
   }
 }
 
+.first-steps {
+  text-align: left;
+  padding: 0;
+  list-style-type: decimal;
+  max-width: 600px;
+  margin: 0 auto;
+  list-style-position: inside;
+}
+
+.coming-event {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  max-width: 650px;
+  margin: 10px auto;
+  border-radius: 4px;
+}
+
+.coming-event h2 {
+  font-size: 50px;
+  margin: 0;
+}
+
 .cresta-share-icon .cresta-the-total-count {
   font-size: 12px;
   width: 40px;
@@ -2558,6 +2662,10 @@ FOOTER STYLES
   display: inline-block;
   width: 40%;
   margin: 0;
+}
+
+.yks-mailchimpFormContainer .yks-mailchimpFormDivRow:last-child .yks_mc_interest_group_text, .yks-mailchimpFormContainer .yks-mailchimpFormDivRow:last-child .yks_mc_interest_group_holder {
+  display: none;
 }
 
 .yks-mailchimpFormContainer .yks-mc-form-row-zip-code {
@@ -2732,7 +2840,7 @@ do they need tweaking?
   }
   .vote-info .legend li {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0;
   }
   .vote-info .state .advice {
     font-size: 1em;
@@ -2902,6 +3010,9 @@ mobile. Make sure to double check these!
     font-size: 2.1em;
     margin: 0.375em 0;
   }
+  .vote-info .legend li {
+    margin: 0 10px;
+  }
   .vote-info .state .advice {
     text-align: left;
   }
@@ -2912,7 +3023,7 @@ mobile. Make sure to double check these!
     font-size: 13px;
   }
   #vmap {
-    height: 400px;
+    height: 480px;
   }
 }
 
@@ -2940,7 +3051,7 @@ be seen on the Desktop.
     font-size: 2.8em;
   }
   #vmap {
-    height: 500px;
+    height: 600px;
   }
 }
 

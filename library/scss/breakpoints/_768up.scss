@@ -301,6 +301,12 @@ mobile. Make sure to double check these!
 		margin: 0.375em 0;
 	}
 
+	.legend {
+		li {
+			margin: 0 10px;
+		}
+	}
+
 	.state {
 		.advice {
 			text-align: left;
@@ -318,5 +324,5 @@ mobile. Make sure to double check these!
 
 // Map
 #vmap {
-	height: 400px;
+	height: 480px;
 }

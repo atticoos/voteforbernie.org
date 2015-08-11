@@ -261,7 +261,7 @@ do they need tweaking?
 
 .vote-info .legend li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0;
 }
 
 .vote-info .state .advice {
@@ -445,6 +445,10 @@ mobile. Make sure to double check these!
   margin: 0.375em 0;
 }
 
+.vote-info .legend li {
+  margin: 0 10px;
+}
+
 .vote-info .state .advice {
   text-align: left;
 }
@@ -458,7 +462,7 @@ mobile. Make sure to double check these!
 }
 
 #vmap {
-  height: 400px;
+  height: 480px;
 }
 
 /******************************************************************
@@ -480,7 +484,7 @@ be seen on the Desktop.
 }
 
 #vmap {
-  height: 500px;
+  height: 600px;
 }
 
 /*
