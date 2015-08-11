@@ -36,6 +36,7 @@ function bones_ahoy() {
   function vpf_custom_post_types() {
     $args = array(
       'labels' => array('name' => 'States', 'singular_name' => 'State'),
+      'rewrite' => array( 'slug' => 'state', 'with_front' => false ),
       'public' => true
     );
     register_post_type('state', $args);
