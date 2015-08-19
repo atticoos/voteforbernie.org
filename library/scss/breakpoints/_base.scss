@@ -525,6 +525,17 @@ POSTS & CONTENT STYLES
 		margin: 0;
 	}
 
+
+	.content-wrapper {
+    background-color: #fff;
+    color: #7E8A9B;
+    font-size: 13px;
+    font-style: italic;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+	}
+
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
@@ -1648,5 +1659,48 @@ FOOTER STYLES
 		font-size: 12px;
 		margin: 5px 0;
 		text-align: center;
+	}
+}
+
+// Newsletter sidebar signup
+@media (min-width: 766px) {
+	.sidebar {
+		.yks-mailchimpFormContainer {
+			.yks-mc-form-row-email-address {
+				width: auto;
+				display: block;
+			}
+			.yks-mc-form-row-zip-code, .yks-mc-form-row-state {
+				width: 48%;
+				margin-top: -15px;
+			}
+		}
+	}
+}
+
+/* Contact Forms */
+.wpcf7 {
+	input {
+		max-width: none;
+	}
+	.wpcf7-submit {
+		width: 100%;
+		padding: 5px 0;
+		border: 0;
+		background-color: #4099FF;
+		color: #fff;
+		font-family: $headerFont;
+		text-transform: uppercase;
+		font-size: 30px;
+		transition: background-color 1s ease;
+		&:hover {
+			background-color: #4C8CD5;
+		}
+	}
+	p {
+		margin: 0;
+	}
+	.ajax-loader {
+		position: absolute;
 	}
 }
