@@ -114,7 +114,7 @@
       <?php // Only show on homepage
       if (is_page( 4 )) { ?>
       <div class="feature">
-        <p><a href="http://yooj.org/moneybomb" target="_blank"><em>Sept. 8th</em> &mdash; Bernie's Birthday Moneybomb! <strong>Join the event</strong></a></p>
+        <p><a href="https://www.facebook.com/events/519406874877505/" target="_blank" data-track="CTA,Moneybomb"><em>Sept. 8th</em> &mdash; Bernie's Birthday Moneybomb! <strong>Join the event</strong></a></p>
       </div>
       <?php } ?>
 
@@ -123,7 +123,7 @@
 				<div id="inner-header" class="wrap cf">
 
           <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-          <p id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
+          <h1 id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>
 
 					<?php // if you'd like to use the site description you can un-comment it below ?>
 					<?php // bloginfo('description'); ?>
