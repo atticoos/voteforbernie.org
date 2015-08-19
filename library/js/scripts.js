@@ -250,7 +250,7 @@ vfb.enhanceSharing = function () {
 
   findCounter = function (site) {
     if (!$floatShareWrapper.find('#' + site + '-count').text()) {
-      return setTimeout(function () { waitForContent(site) }, 100);
+      return setTimeout(function () { findCounter(site) }, 100);
     } else {
       addCounter($contentShareWrappers.find('.' + site + '-cresta-share'), $floatShareWrapper.find('#' + site + '-count').text());
     }
