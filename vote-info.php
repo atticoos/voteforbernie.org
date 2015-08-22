@@ -147,6 +147,20 @@
                         <?php if ($additionalNote) { ?>
                           <p class="explain"><?php echo $additionalNote; ?></p>
                         <?php } ?>
+
+                        <?php if ($stateCode === 'ny') {
+                        	$today = time();
+                        	$oct9 = mktime(0,0,0,10,9,2015);
+                        	$daysLeft = round(($oct9 - $today)/86400);
+                        	?>
+
+                        	<div class="callout">
+	                        	<p>There are only <strong><?php echo $daysLeft ?> days left</strong> to update your registration to Democrat!<br/>
+	                        	If you miss the deadline, <strong>you will not be able to vote for Bernie!</strong>.</p>
+	                        	<p class="explain">Check your <a href="https://voterlookup.elections.state.ny.us/votersearch.aspx" data-track="Check Registration, <?php echo $stateCode; ?>" target="_blank">current registration status online</a><br/>
+	                        	If you are not already affiliated as a democrat, <a href="http://dmv.ny.gov/more-info/electronic-voter-registration-application" data-track="Online Register, <?php echo $stateCode; ?>" target="_blank">update your NY registration online</a>.</p>
+                        	</div>
+                        <?php } ?>
                       </div>
                       <div class="resources m-all t-1of3 d-1of3">
                         <p><?php echo $typeText; ?>: <strong><?php echo $primaryDate; ?></strong></p>
