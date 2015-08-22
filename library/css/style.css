@@ -2308,6 +2308,11 @@ FOOTER STYLES
   margin: 0;
 }
 
+.vote-info .state .callout {
+  background-color: #fff;
+  padding: 10px 20px;
+}
+
 .vote-info .sign-up-notice {
   text-align: center;
 }
