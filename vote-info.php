@@ -48,7 +48,7 @@
 									<div class="sign-up-notice">
 										<p class="tentative">All dates are tentative and subject to change at any time.<br/>If you want to receive important updates for your state, sign up for the email list.</p>
 										<?php echo yksemeProcessSnippet( "2da18e85f7" , "Keep me informed!" ); ?>
-										<p class="byline vcard">Last updated: <?php the_modified_time(get_option('date_format')); ?>, if you find any mistakes, <a href="mailto:contact@voteforbernie.org">email</a>.</p>
+										<p class="byline vcard">Last updated: <?php the_modified_time(get_option('date_format')); ?>, if you find any mistakes, <a href="/contact/">contact us</a>.</p>
 									</div>
 								</header>
 
